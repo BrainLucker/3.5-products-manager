@@ -10,8 +10,7 @@ import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 import ru.netology.repository.ProductRepository;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 
@@ -79,14 +78,12 @@ public class ProductManagerTest {
     @Test
     public void shouldMatchesAndReturnTrue() {
         boolean actual = manager.matches(phone, "S21");
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
     public void shouldMatchesAndReturnFalse() {
         boolean actual = manager.matches(phone, "S20");
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 }
